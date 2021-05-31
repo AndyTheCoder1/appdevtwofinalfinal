@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Prompts Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Prompt one</th>
+      <th>Owner</th>
+      <th>Prompt</th>
+      <th>Prompt two</th>
+      <th>Prompt three</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prompts_answers.each do |prompts_answer| %>
+      <tr>
+        <td><%= prompts_answer.prompt_one %></td>
+        <td><%= prompts_answer.owner_id %></td>
+        <td><%= prompts_answer.prompt_id %></td>
+        <td><%= prompts_answer.prompt_two %></td>
+        <td><%= prompts_answer.prompt_three %></td>
+        <td><%= link_to 'Show', prompts_answer %></td>
+        <td><%= link_to 'Edit', edit_prompts_answer_path(prompts_answer) %></td>
+        <td><%= link_to 'Destroy', prompts_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prompts Answer', new_prompts_answer_path %>

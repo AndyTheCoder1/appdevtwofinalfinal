@@ -1,0 +1,39 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_id: 1
+  full_name: MyString
+  religion: MyString
+  political_affiliation: MyString
+  height: MyString
+  hometown: MyString
+  age: 1
+  job_title: MyString
+  school: MyString
+  gender: MyString
+  drinking: MyString
+  smoking: MyString
+  undergrad_school: MyString
+  daily_photo_reveals: 1
+  interested_in_men: false
+  interested_in_women: false
+  interested_in_men_and_women: false
+
+two:
+  owner_id: 1
+  full_name: MyString
+  religion: MyString
+  political_affiliation: MyString
+  height: MyString
+  hometown: MyString
+  age: 1
+  job_title: MyString
+  school: MyString
+  gender: MyString
+  drinking: MyString
+  smoking: MyString
+  undergrad_school: MyString
+  daily_photo_reveals: 1
+  interested_in_men: false
+  interested_in_women: false
+  interested_in_men_and_women: false

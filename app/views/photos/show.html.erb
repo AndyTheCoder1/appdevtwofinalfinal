@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @photo.caption %>
+</p>
+
+<p>
+  <strong>Image one:</strong>
+  <%= @photo.image_one %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @photo.owner_id %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @photo.location %>
+</p>
+
+<p>
+  <strong>Image two:</strong>
+  <%= @photo.image_two %>
+</p>
+
+<p>
+  <strong>Image three:</strong>
+  <%= @photo.image_three %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

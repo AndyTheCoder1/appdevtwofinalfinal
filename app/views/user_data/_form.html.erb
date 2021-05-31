@@ -1,0 +1,102 @@
+<%= form_with(model: user_datum) do |form| %>
+  <% if user_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_datum.errors.count, "error") %> prohibited this user_datum from being saved:</h2>
+
+      <ul>
+        <% user_datum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :owner_id %>
+    <%= form.number_field :owner_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :religion %>
+    <%= form.text_field :religion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :political_affiliation %>
+    <%= form.text_field :political_affiliation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.text_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hometown %>
+    <%= form.text_field :hometown %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job_title %>
+    <%= form.text_field :job_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :drinking %>
+    <%= form.text_field :drinking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :smoking %>
+    <%= form.text_field :smoking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :undergrad_school %>
+    <%= form.text_field :undergrad_school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :daily_photo_reveals %>
+    <%= form.number_field :daily_photo_reveals %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interested_in_men %>
+    <%= form.check_box :interested_in_men %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interested_in_women %>
+    <%= form.check_box :interested_in_women %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interested_in_men_and_women %>
+    <%= form.check_box :interested_in_men_and_women %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

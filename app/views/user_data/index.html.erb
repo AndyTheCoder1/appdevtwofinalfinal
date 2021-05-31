@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Owner</th>
+      <th>Full name</th>
+      <th>Religion</th>
+      <th>Political affiliation</th>
+      <th>Height</th>
+      <th>Hometown</th>
+      <th>Age</th>
+      <th>Job title</th>
+      <th>School</th>
+      <th>Gender</th>
+      <th>Drinking</th>
+      <th>Smoking</th>
+      <th>Undergrad school</th>
+      <th>Daily photo reveals</th>
+      <th>Interested in men</th>
+      <th>Interested in women</th>
+      <th>Interested in men and women</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_data.each do |user_datum| %>
+      <tr>
+        <td><%= user_datum.owner_id %></td>
+        <td><%= user_datum.full_name %></td>
+        <td><%= user_datum.religion %></td>
+        <td><%= user_datum.political_affiliation %></td>
+        <td><%= user_datum.height %></td>
+        <td><%= user_datum.hometown %></td>
+        <td><%= user_datum.age %></td>
+        <td><%= user_datum.job_title %></td>
+        <td><%= user_datum.school %></td>
+        <td><%= user_datum.gender %></td>
+        <td><%= user_datum.drinking %></td>
+        <td><%= user_datum.smoking %></td>
+        <td><%= user_datum.undergrad_school %></td>
+        <td><%= user_datum.daily_photo_reveals %></td>
+        <td><%= user_datum.interested_in_men %></td>
+        <td><%= user_datum.interested_in_women %></td>
+        <td><%= user_datum.interested_in_men_and_women %></td>
+        <td><%= link_to 'Show', user_datum %></td>
+        <td><%= link_to 'Edit', edit_user_datum_path(user_datum) %></td>
+        <td><%= link_to 'Destroy', user_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Datum', new_user_datum_path %>

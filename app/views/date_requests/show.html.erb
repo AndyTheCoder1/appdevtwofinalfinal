@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @date_request.sender_id %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @date_request.recipient_id %>
+</p>
+
+<p>
+  <strong>Acceptance:</strong>
+  <%= @date_request.acceptance %>
+</p>
+
+<p>
+  <strong>Weekly rose:</strong>
+  <%= @date_request.weekly_rose %>
+</p>
+
+<%= link_to 'Edit', edit_date_request_path(@date_request) %> |
+<%= link_to 'Back', date_requests_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prompt one:</strong>
+  <%= @prompts_answer.prompt_one %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @prompts_answer.owner_id %>
+</p>
+
+<p>
+  <strong>Prompt:</strong>
+  <%= @prompts_answer.prompt_id %>
+</p>
+
+<p>
+  <strong>Prompt two:</strong>
+  <%= @prompts_answer.prompt_two %>
+</p>
+
+<p>
+  <strong>Prompt three:</strong>
+  <%= @prompts_answer.prompt_three %>
+</p>
+
+<%= link_to 'Edit', edit_prompts_answer_path(@prompts_answer) %> |
+<%= link_to 'Back', prompts_answers_path %>

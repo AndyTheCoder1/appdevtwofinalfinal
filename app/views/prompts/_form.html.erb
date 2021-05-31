@@ -1,0 +1,22 @@
+<%= form_with(model: prompt) do |form| %>
+  <% if prompt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(prompt.errors.count, "error") %> prohibited this prompt from being saved:</h2>
+
+      <ul>
+        <% prompt.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :questions %>
+    <%= form.text_field :questions %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
