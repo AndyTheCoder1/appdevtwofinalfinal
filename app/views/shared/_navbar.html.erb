@@ -25,10 +25,28 @@
     <ul class="navbar-nav">
     <% if user_signed_in? %>
 
-        <li class="nav-item">
-        <%= link_to "Edit #{current_user.email}", edit_user_registration_path, class: "nav-link" %>
-        <li class="nav-item">
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+        <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          User Settings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Edit your profile", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Edit your preferences", edit_user_registration_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+
+
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/prompts">Prompts</a>
+          <a class="dropdown-item" href="/prompts_answers">Prompts Answers</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/date_requests">Date Requests</a>
+          <a class="dropdown-item" href="/photos">Photos</a>
+        </div>
 
         <%else%>
 

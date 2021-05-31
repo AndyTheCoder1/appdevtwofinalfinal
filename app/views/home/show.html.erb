@@ -50,7 +50,15 @@
  <br>
 
 
-    <h4> Ready to get started? <%= link_to "Sign up here", new_user_registration_path %> </h4>
+<% if user_signed_in? %>
+
+    <h4> You're already signed in, start looking through potential soulmates <%= link_to "here", new_user_registration_path %> </h4>
+
+<%else%>
+
+  <h4> Ready to get started? <%= link_to "Sign up here", new_user_registration_path %> </h4>
+
+<%end%>
 
 
 </center>
