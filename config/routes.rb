@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 
   root "home#show"
 
+  get "/users/:id" => "users#show", as: :user
+
   #get ":editprofile" => "editprofile#edit", as: :editprofile
 
+  
 
   resources :user_data
   resources :prompts
