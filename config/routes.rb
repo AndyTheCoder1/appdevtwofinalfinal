@@ -3,10 +3,8 @@ Rails.application.routes.draw do
 
   root "home#show"
 
-  get ":user_id" => "user#show", as: :user
-  #get ":user_id/photos" => "user#show", as: :user
 
-  get ":editprofile" => "editprofile#edit", as: :editprofile
+  get "/updateprofile" => "user#update", as: :editprofile
 
   
 
@@ -16,5 +14,7 @@ Rails.application.routes.draw do
   resources :date_requests
   resources :photos
   devise_for :users
+
+    get ":user_id" => "user#show", as: :user
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

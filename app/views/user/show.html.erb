@@ -59,14 +59,32 @@
  <br>
  <br>
 
-<form action="/updateprofile">
-  <div class="form-group">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" value="<%=current_user.email%>" name="query_email">
-  </div>
+<form action="/updateprofile" method: "get">
   <div class="form-group">
     <label for="name"> Name </label>
     <input type="text" class="form-control" id="name" value="<%=current_user.user_datum.full_name%>" name="query_name">
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <select class="form-control" id="age" placeholder="yes" name="query_age">
+      <option>18</option>
+      <option>19</option>
+      <option>20</option>
+      <option>21</option>
+      <option>22</option>
+      <option>23</option>
+      <option>24</option>
+      <option>25</option>
+      <option>26</option>
+      <option>27</option>
+      <option>28</option>
+      <option>29</option>
+      <option>30</option>
+      <option>31</option>
+      <option>32</option>
+      <option>33</option>
+     
+    </select>
   </div>
   <div class="form-group">
     <label for="home">Hometown</label>
@@ -91,6 +109,23 @@
       <option>Liberal</option>
       <option>Moderate</option>
       <option>Conservative</option>
+      <option>Other</option>
+      <option>Prefer not to say</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="religion">Religion</label>
+    <select class="form-control" id="religion" placeholder="yes" name="query_religion">
+      <option>Catholic</option>
+      <option>Christian</option>
+      <option>Buddhist</option>
+      <option>Jewish</option>
+      <option>Muslim</option>
+      <option>Hindu</option>
+      <option>Athiest</option>
+      <option>Spiritual</option>
+      <option>Agnostic</option>
       <option>Other</option>
       <option>Prefer not to say</option>
     </select>
@@ -139,6 +174,14 @@
       <option>No</option>
       <option>Sometimes</option>
       <option>Prefer not to say</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="smoking">Smoking:</label>
+    <select class="form-control" id="smoking" name="query_smoking">
+      <option>Yes</option>
+      <option>Sometimes</option>
+      <option>No</option>
     </select>
   </div>
   <div class="form-group">
