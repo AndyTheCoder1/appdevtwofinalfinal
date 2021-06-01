@@ -1,9 +1,7 @@
-
-
 <center>
  <br>
  <br>
-<h1 >Your Profile</h1>
+<h1 >Your Profile, <%=current_user.user_datum.full_name%></h1>
 
  <br>
  <br>
@@ -54,116 +52,93 @@
 <form>
   <div class="form-group">
     <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.email%>">
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlInput1"> Name </label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.full_name%>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Hometown</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.hometown%>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Job Title</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.job_title%>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Current School</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.school%>">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Undergrad School</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.undergrad_school%>">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Political Affiliation</label>
     <select class="form-control" id="exampleFormControlSelect1" placeholder="yes">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option>Liberal</option>
+      <option>Moderate</option>
+      <option>Conservative</option>
+      <option>Other</option>
+      <option>Prefer not to say</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Height</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option>4'10''</option>
+      <option>4'11''</option>
+      <option>5'</option>
+      <option>5'1''</option>
+      <option>5'2''</option>
+      <option>5'3''</option>
+      <option>5'4''</option>
+      <option>5'5''</option>
+      <option>5'6''</option>
+      <option>5'7''</option>
+      <option>5'8''</option>
+      <option>5'9''</option>
+      <option>5'10''</option>
+      <option>5'11''</option>
+      <option>6'</option>
+      <option>6'1''</option>
+      <option>6'2''</option>
+      <option>6'3''</option>
+      <option>6'4''</option>
+      <option>6'5''</option>
+      <option>6'6''</option>
+      <option>6'7''</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Gender</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option>Female</option>
+      <option>Male</option>
+      <option>Non-binary</option>
+      <option>Other</option>
+      <option>Prefer not to say</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Drinking</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option>Yes</option>
+      <option>No</option>
+      <option>Sometimes</option>
+      <option>Prefer not to say</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
+    <label for="exampleFormControlSelect1">Interested In:</label>
     <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Example select</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+      <option>Women</option>
+      <option>Men</option>
+      <option>Women and Men</option>
+      <option>Other</option>
+      <option>Prefer not to say</option>
     </select>
   </div>
   <div class="form-group">
