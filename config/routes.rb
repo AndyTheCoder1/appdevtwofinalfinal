@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "home#show"
 
   get ":user_id" => "user#show", as: :user
+  #get ":user_id/photos" => "user#show", as: :user
 
   #get ":editprofile" => "editprofile#edit", as: :editprofile
 

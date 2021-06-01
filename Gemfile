@@ -69,6 +69,10 @@ gem 'rollbar'
 gem 'strip_attributes'
 gem 'skylight'
 gem 'validate_url'
+gem "carrierwave"
+gem "cloudinary"
+
+
 group :development do
   gem 'annotate'
   gem 'better_errors'

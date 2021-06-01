@@ -1,42 +1,52 @@
-<div class="container">
 
+
+<div class="container">
 <center>
  <br>
  <br>
 <h1 >Your Profile, <%=current_user.user_datum.full_name%></h1>
 
+
+
  <br>
  <br>
 
-</center
-<div></div>
+
 
 <div class="card-deck">
   <div class="card">
-    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Update Photo 1:</h5>
-      <p class="card-text"> Upload link</p>
-    </div>
-    <div class="card-footer">
-    </div>
-  </div>
-  <div class="card">
     <img src="<%=current_user.own_photos.first.image_one%>" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Update Photo 2:</h5>
-      <p class="card-text">Upload link</p>
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
     </div>
     <div class="card-footer">
+    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="avatar" name="avatar" class="form-control">
+
+
     </div>
   </div>
   <div class="card">
-    <img src="https://pixnio.com/free-images/2020/12/23/2020-12-23-13-05-18-1500x1000.jpg" class="card-img-top" alt="...">
+    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Update Photo 3: </h5>
-      <p class="card-text">Upload link</p>
+      <h5 class="card-title">Photo 2</h5>
+      <p class="card-text"></p>
     </div>
     <div class="card-footer">
+    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="avatar" name="avatar" class="form-control">
+    </div>
+  </div>
+  <div class="card">
+    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 3</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="avatar" name="avatar" class="form-control">
     </div>
   </div>
 </div>
