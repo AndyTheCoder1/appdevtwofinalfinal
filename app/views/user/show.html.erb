@@ -1,3 +1,5 @@
+<div class="container">
+
 <center>
  <br>
  <br>
@@ -13,66 +15,61 @@
   <div class="card">
     <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Prompt One:</h5>
-      <p class="card-text"> We lead with user bios, so you're able to learn about a person before deciding if you'd like to see their photos</p>
+      <h5 class="card-title">Update Photo 1:</h5>
+      <p class="card-text"> Upload link</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
   <div class="card">
-    <img src="https://pixnio.com/free-images/2020/12/29/2020-12-29-11-23-57-1500x1000.jpg" class="card-img-top" alt="...">
+    <img src="<%=current_user.own_photos.first.image_one%>" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Prompt Two:</h5>
-      <p class="card-text">We work with local restaurants to help facilitate deals on dates for your matches</p>
+      <h5 class="card-title">Update Photo 2:</h5>
+      <p class="card-text">Upload link</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
   <div class="card">
     <img src="https://pixnio.com/free-images/2020/12/23/2020-12-23-13-05-18-1500x1000.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Prompt Three: </h5>
-      <p class="card-text">Our platform is designed to help you express your full self, because we believe our users are so much more than just their photos</p>
+      <h5 class="card-title">Update Photo 3: </h5>
+      <p class="card-text">Upload link</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
     </div>
   </div>
 </div>
 
-<body style="margin:100;padding:50">
-
 
 
  <br>
  <br>
 
-<form>
+<form action="/" method="post">
   <div class="form-group">
     <label for="exampleFormControlInput1">Email address</label>
     <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.email%>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1"> Name </label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.full_name%>">
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.full_name%>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Hometown</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.hometown%>">
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.hometown%>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Job Title</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.job_title%>">
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.job_title%>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Current School</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.school%>">
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.school%>">
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Undergrad School</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.undergrad_school%>">
+    <input type="text" class="form-control" id="exampleFormControlInput1" value="<%=current_user.user_datum.undergrad_school%>">
   </div>
 
   <div class="form-group">
@@ -141,11 +138,23 @@
       <option>Prefer not to say</option>
     </select>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="yes"></textarea>
-  </div>
+  <button>
+  Update Info
+  </button>
 </form>
+
+<h1>                  </h1>
+
+<h1>            -      </h1>
+<h1>                 </h1>
+<h1>              -    </h1>
+<h1>           -       </h1>
+<h1>           -       </h1>
+<h1>           -       </h1>
+
+
 
 
 </body>
+
+</div>

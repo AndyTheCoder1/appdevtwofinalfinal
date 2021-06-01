@@ -11,6 +11,7 @@
   </head>
 
   <body>
+  <div class="container">
     <%= render "shared/navbar" %>
     <% if notice.present? %>
       <%= render "shared/flash", message: notice, css_class: "success" %>
@@ -20,7 +21,9 @@
     <%end%>
 
 
+
     <%= yield %>
+  </div>
   </body>
 </html>
 
