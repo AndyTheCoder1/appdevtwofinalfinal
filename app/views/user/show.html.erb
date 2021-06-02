@@ -103,16 +103,16 @@
     <input type="text" class="form-control" id="undergrad" value="<%=current_user.user_datum.undergrad_school%>" name="query_undergrad">
   </div>
 
-  <div class="form-group">
-    <label for="political">Political Affiliation</label>
-    <select class="form-control" id="political" placeholder="yes" name="query_politics">
-      <option>Liberal</option>
-      <option>Moderate</option>
-      <option>Conservative</option>
-      <option>Other</option>
-      <option>Prefer not to say</option>
+
+  <% m_array = ["Liberal", "Moderate", "Conservative", "Other", "Prefer not to say"] %>
+  <label for="political">Political Affiliation</label>
+  <select class="form-control" id="political" placeholder="yes" name="query_politics">
+    <% m_array.each do |political|%>
+      <option <%= "selected" if political == current_user.user_datum.political_affiliation%>>
+        <%= political %>
+      </option>
+      <%end%>
     </select>
-  </div>
 
   <div class="form-group">
     <label for="religion">Religion</label>
