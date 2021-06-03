@@ -1,10 +1,11 @@
 class UserController < ApplicationController
   def show
-    @test = 7
+    
   end
 
   def explore
     if current_user.user_datum.interested_in_men == true
+      @list_of_users = UserDatum.where({ :gender => "male" })
       
     end
   end
