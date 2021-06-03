@@ -1,18 +1,38 @@
-<%= @list_of_users.each do |user| %>
 
+<center>
 
+<br>
+<br>
+<br>
 
+<%@list_of_users.each do |user| %>
+<div class="card" style="width: 18rem;">
+  <img src="<%=user.owner.own_photos.first.image_one%>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%=user.full_name%></h5>
+    <p class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Grad School: <%=user.school%></li>
+    <li class="list-group-item">Undergrad: <%=user.undergrad_school%></li>
+    <li class="list-group-item">Job Title: <%=user.job_title%></li>
+    <li class="list-group-item">Height: <%=user.height%></li>
+    <li class="list-group-item">drinking?: <%=user.drinking%></li>
+    <li class="list-group-item">smoking?: <%=user.smoking%></li>
+    <li class="list-group-item">poltiics: <%=user.political_affiliation%></li>
+    <li class="list-group-item">Religion: <%=user.religion%></li>
 
-
-
-
-
-
-
-
-
-
-
-<%= user.religion%>
-
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">reveal photos?</a>
+    <a href="#" class="card-link">Politely Pass</a>
+  </div>
+</div>
+<br>
+<br>
+<br>
 <%end%>
+
+
+</center>
+
