@@ -5,7 +5,7 @@
  <br>
  <br>
 <h1 >Your Profile, <%=current_user.user_datum.full_name%></h1>
-
+</center>
 
 
  <br>
@@ -64,25 +64,16 @@
     <label for="name"> Name </label>
     <input type="text" class="form-control" id="name" value="<%=current_user.user_datum.full_name%>" name="query_name">
   </div>
-  <div class="form-group">
-    <label for="age">Age</label>
-    <select class="form-control" id="age" placeholder="yes" name="query_age">
-      <option>18</option>
-      <option>19</option>
-      <option>20</option>
-      <option>21</option>
-      <option>22</option>
-      <option>23</option>
-      <option>24</option>
-      <option>25</option>
-      <option>26</option>
-      <option>27</option>
-      <option>28</option>
-      <option>29</option>
-      <option>30</option>
-      <option>31</option>
-      <option>32</option>
-      <option>33</option>
+
+<% m_array = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36] %>
+  <label for="political">Age</label>
+  <select class="form-control" id="age" placeholder="yes" name="query_age">
+    <% m_array.each do |number|%>
+      <option <%= "selected" if number == current_user.user_datum.age%>>
+        <%= number %>
+      </option>
+      <%end%>
+    </select>
      
     </select>
   </div>
@@ -114,86 +105,63 @@
       <%end%>
     </select>
 
-  <div class="form-group">
-    <label for="religion">Religion</label>
-    <select class="form-control" id="religion" placeholder="yes" name="query_religion">
-      <option>Catholic</option>
-      <option>Christian</option>
-      <option>Buddhist</option>
-      <option>Jewish</option>
-      <option>Muslim</option>
-      <option>Hindu</option>
-      <option>Athiest</option>
-      <option>Spiritual</option>
-      <option>Agnostic</option>
-      <option>Other</option>
-      <option>Prefer not to say</option>
+
+    <% m_array = ["Catholic", "Christian", "Buddhist", "Jewish", "Muslim", "Hindu", "Atheist", "Spiritual", "Agnostic", "Prefer not to say"] %>
+  <label for="religion">Religion</label>
+  <select class="form-control" id="religion" placeholder="yes" name="query_religion">
+    <% m_array.each do |religion|%>
+      <option <%= "selected" if religion == current_user.user_datum.religion%>>
+        <%= religion %>
+      </option>
+      <%end%>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="height">Height</label>
-    <select class="form-control" id="height" name="query_height">
-      <option>4'10''</option>
-      <option>4'11''</option>
-      <option>5'</option>
-      <option>5'1''</option>
-      <option>5'2''</option>
-      <option>5'3''</option>
-      <option>5'4''</option>
-      <option>5'5''</option>
-      <option>5'6''</option>
-      <option>5'7''</option>
-      <option>5'8''</option>
-      <option>5'9''</option>
-      <option>5'10''</option>
-      <option>5'11''</option>
-      <option>6'</option>
-      <option>6'1''</option>
-      <option>6'2''</option>
-      <option>6'3''</option>
-      <option>6'4''</option>
-      <option>6'5''</option>
-      <option>6'6''</option>
-      <option>6'7''</option>
+
+
+    <% m_array = ["4'10", "4'11", "5'", "5'1", "5'2''", "5'3''", "5'4''", "5'5''", "5'6''", "5'7''", "5'8''", "5'9''", "5'10''", "5'11''", "6'", "6'1''", "6'2''", "6'3''", "6'4''", "6'5''", "6'6''", "6'7''", "6'8''", "6'9''", "6'10''" ] %>
+  <label for="height">Height</label>
+  <select class="form-control" id="height" placeholder="yes" name="query_height">
+    <% m_array.each do |height|%>
+      <option <%= "selected" if height == current_user.user_datum.height%>>
+        <%= height %>
+      </option>
+      <%end%>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="gender">Gender</label>
-    <select class="form-control" id="gender" name="query_gender">
-      <option>Female</option>
-      <option>Male</option>
-      <option>Non-binary</option>
-      <option>Other</option>
-      <option>Prefer not to say</option>
+
+
+
+    <% m_array = ["Female", "Male", "Non-Binary", "Other", "Prefer not to say"] %>
+  <label for="gender">Gender Identity</label>
+  <select class="form-control" id="gender" placeholder="yes" name="query_gender">
+    <% m_array.each do |gender|%>
+      <option <%= "selected" if gender == current_user.user_datum.gender%>>
+        <%= gender %>
+      </option>
+      <%end%>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="alcohol">Drinking</label>
-    <select class="form-control" id="alcohol" name="query_drinking">
-      <option>Yes</option>
-      <option>No</option>
-      <option>Sometimes</option>
-      <option>Prefer not to say</option>
+
+
+   <% m_array = ["yes", "Sometimes", "No", "Prefer not to say"] %>
+  <label for="alcohol">Drinking</label>
+  <select class="form-control" id="alcohol" placeholder="yes" name="query_drinking">
+    <% m_array.each do |drink|%>
+      <option <%= "selected" if drink == current_user.user_datum.drinking%>>
+        <%= drink %>
+      </option>
+      <%end%>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="smoking">Smoking:</label>
-    <select class="form-control" id="smoking" name="query_smoking">
-      <option>Yes</option>
-      <option>Sometimes</option>
-      <option>No</option>
+
+
+    <% m_array = ["yes", "Sometimes", "No", "Prefer not to say"] %>
+  <label for="smoking">Smoking</label>
+  <select class="form-control" id="smoking" placeholder="yes" name="query_smoking">
+    <% m_array.each do |smoke|%>
+      <option <%= "selected" if smoke == current_user.user_datum.smoking%>>
+        <%= smoke %>
+      </option>
+      <%end%>
     </select>
-  </div>
-  <div class="form-group">
-    <label for="preferences">Interested In:</label>
-    <select class="form-control" id="preferences" name="query_preferences">
-      <option>Women</option>
-      <option>Men</option>
-      <option>Women and Men</option>
-      <option>Other</option>
-      <option>Prefer not to say</option>
-    </select>
-  </div>
+
+
   <button>
   Update Info
   </button>
