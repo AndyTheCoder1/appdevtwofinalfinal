@@ -3,6 +3,12 @@ class UserController < ApplicationController
     @test = 7
   end
 
+  def explore
+    if current_user.user_datum.interested_in_men == true
+      
+    end
+  end
+
 
   def update
     input_name = params.fetch("query_name")
