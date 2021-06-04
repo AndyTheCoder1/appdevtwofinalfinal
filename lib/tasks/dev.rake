@@ -2,12 +2,12 @@ desc "Fill the database tables with some sample data"
 task sample_data: :environment do
   starting = Time.now
 
-  UserDatum.delete_all
-  PromptsAnswer.delete_all
-  DateRequest.delete_all
+  #UserDatum.delete_all
+  #PromptsAnswer.delete_all
+  #DateRequest.delete_all
   Photo.delete_all
   User.delete_all
-  UserDatum.delete_all
+  #UserDatum.delete_all
 
   people = Array.new(10) do
     {
@@ -26,33 +26,34 @@ task sample_data: :environment do
 
     user = User.create(
       email: "#{username}@example.com",
-      password: "password",
-     
-
-    p user.errors.full_messages
+      password: "password"
+    )
   end
 
+
+  users = User.all
+
   users.each do |user|
-      user.own_photos.image_one.create(
-        image: "/#{rand(1..10)}.jpeg"
+      photo = Photo.create(owner_id: user.id)
+      photo.update(
+        image_one: "https://robohash.org/#{rand(1..10)}.jpeg"
       )
-      user.own_photos.image_two.create(
-        image: "/#{rand(1..10)}.jpeg"
+      photo.update(
+        image_two: "https://robohash.org/#{rand(1..10)}.jpeg"
       )
-      user.own_photos.image_three.create(
-        image: "/#{rand(1..10)}.jpeg"
+      photo.update(
+        image_three: "https://robohash.org/#{rand(1..10)}.jpeg"
       )
   end
 
-  users.each do |user|
-        if rand < 0.5
-          user.user_datum.drinking = "yes"
-        else
-          user.user_datum.drinking = "No"
-        end
-        if rand < 0.25
-          
-        end
+  # users.each do |user|
+  #       if rand < 0.5
+  #         user.user_datum.drinking = "yes"
+  #       else
+  #         user.user_datum.drinking = "No"
+  #       end
+         # private: [true, false].sample,
+  #       end
 
   ending = Time.now
   p "It took #{(ending - starting).to_i} seconds to create sample data."

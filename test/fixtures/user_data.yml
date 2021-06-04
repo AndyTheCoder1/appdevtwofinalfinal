@@ -4,7 +4,7 @@
 #
 #  id                          :bigint           not null, primary key
 #  age                         :integer
-#  daily_photo_reveals         :integer
+#  daily_photo_reveals         :integer          default(3)
 #  drinking                    :string           default(" ")
 #  full_name                   :string           default(" ")
 #  gender                      :string           default(" ")

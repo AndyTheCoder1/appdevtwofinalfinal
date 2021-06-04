@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_233441) do
+ActiveRecord::Schema.define(version: 2021_06_04_154125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_233441) do
     t.string "drinking", default: " "
     t.string "smoking", default: " "
     t.string "undergrad_school", default: " "
-    t.integer "daily_photo_reveals"
+    t.integer "daily_photo_reveals", default: 3
     t.boolean "interested_in_men", default: true
     t.boolean "interested_in_women", default: false
     t.boolean "interested_in_men_and_women", default: false

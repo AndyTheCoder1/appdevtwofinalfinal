@@ -35,7 +35,7 @@ class UserController < ApplicationController
     input_school =  params.fetch("query_undergrad")
     input_interest =  params.fetch("query_preferences")
 
-    matching_data = UserDatum.where({ :id => current_user.id})
+    matching_data = UserDatum.where({ :owner_id => current_user.id})
 
     the_data = matching_data.first
 
