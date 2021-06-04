@@ -36,7 +36,7 @@ class UserController < ApplicationController
     input_drinking = params.fetch("query_drinking")
     input_smoking =  params.fetch("query_smoking")
     input_school =  params.fetch("query_undergrad")
-    #input_interest =  params.fetch("query_preferences")
+    input_interest =  params.fetch("query_preferences")
 
     matching_data = UserDatum.where({ :id => current_user.id})
 
@@ -54,6 +54,22 @@ class UserController < ApplicationController
     the_data.drinking = input_drinking
     the_data.smoking = input_smoking
     the_data.undergrad_school = input_school
+
+    if input_interest == "men"
+      the_data.interested_in_men = TRUE
+      the_data.interested_in_women = FALSE
+      the_data.interested_in_men_and_women = FALSE
+
+    elsif input_interest == "women"
+      the_data.interested_in_men = FALSE
+      the_data.interested_in_women = TRUE
+      the_data.interested_in_men_and_women = FALSE
+    
+    else 
+      the_data.interested_in_men = TRUE
+      the_data.interested_in_women = TRUE
+      the_data.interested_in_men_and_women = TRUE
+    end
 
     the_data.save
 

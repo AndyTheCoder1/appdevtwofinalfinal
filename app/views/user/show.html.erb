@@ -222,19 +222,19 @@
   </hr>
 
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios1" value="men" <%= "checked" if current_user.user_datum.interested_in_men == TRUE %>>
   <label class="form-check-label" for="exampleRadios1">
     Interested in Men
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios2" value="women" <%= "checked" if current_user.user_datum.interested_in_women == TRUE %>>
   <label class="form-check-label" for="exampleRadios2">
     Interested in Women
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios3" value="men and women" <%= "checked" if current_user.user_datum.interested_in_men_and_women == TRUE %>>
   <label class="form-check-label" for="exampleRadios3">
     Interested in Men and Women
   </label>
