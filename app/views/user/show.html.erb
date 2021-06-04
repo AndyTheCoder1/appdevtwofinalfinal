@@ -1,10 +1,9 @@
 
-
 <div class="container">
 <center>
  <br>
  <br>
-<h1 >Your Profile, <%=current_user.user_datum.full_name%></h1>
+<h1 >Your Profile</h1>
 </center>
 
 
@@ -14,73 +13,124 @@
 
 
 <div class="card-deck">
+<% if current_user.own_photos.first == nil%>
+
   <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 2</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 3</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+  
+  
+  
+  <% else %>
+    <div class="card">
     <img src="<%=current_user.own_photos.first.image_one%>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Photo 1</h5>
       <p class="card-text"></p>
     </div>
     <div class="card-footer">
-    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
-              <input type="file" id="avatar" name="avatar" class="form-control">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
 
     </form>
     </div>
   </div>
-  <div class="card">
-    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
+    <div class="card">
+    <img src="<%=current_user.own_photos.first.image_two%>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Photo 2</h5>
       <p class="card-text"></p>
     </div>
     <div class="card-footer">
-    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
-              <input type="file" id="avatar" name="avatar" class="form-control">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+
     </form>
     </div>
   </div>
-  <div class="card">
+
+    <div class="card">
     <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Photo 3</h5>
       <p class="card-text"></p>
     </div>
     <div class="card-footer">
-    <form action="/create_user" method="post" class="form-horizontal" enctype="multipart/form-data">
-              <input type="file" id="avatar" name="avatar" class="form-control">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
 
     </form>
     </div>
   </div>
-</div>
+  <%end%>
+
+ <hr>
+  </hr>
 
 
 
  <br>
  <br>
+
+
+
+  </select>
+  </div>
+
+
 
 <form action="/updateprofile" method: "get">
+  <div class="form-group">
+    <label for="home">Hometown</label>
+    <input type="text" class="form-control" id="home" value="<%=current_user.user_datum.hometown%>" name="query_home">
+  </div>
+
   <div class="form-group">
     <label for="name"> Name </label>
     <input type="text" class="form-control" id="name" value="<%=current_user.user_datum.full_name%>" name="query_name">
   </div>
 
-<% m_array = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36] %>
-  <label for="political">Age</label>
-  <select class="form-control" id="age" placeholder="yes" name="query_age">
-    <% m_array.each do |number|%>
-      <option <%= "selected" if number == current_user.user_datum.age%>>
-        <%= number %>
-      </option>
-      <%end%>
-    </select>
-     
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="home">Hometown</label>
-    <input type="text" class="form-control" id="home" value="<%=current_user.user_datum.hometown%>" name="query_home">
-  </div>
   <div class="form-group">
     <label for="job">Job Title</label>
     <input type="text" class="form-control" id="job" value="<%=current_user.user_datum.job_title%>" name="query_job">
@@ -94,6 +144,16 @@
     <input type="text" class="form-control" id="undergrad" value="<%=current_user.user_datum.undergrad_school%>" name="query_undergrad">
   </div>
 
+<% m_array = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36] %>
+  <label for="political">Age</label>
+  <select class="form-control" id="age" placeholder="yes" name="query_age">
+    <% m_array.each do |number|%>
+      <option <%= "selected" if number == current_user.user_datum.age%>>
+        <%= number %>
+      </option>
+      <%end%>
+    </select>
+     
 
   <% m_array = ["Liberal", "Moderate", "Conservative", "Other", "Prefer not to say"] %>
   <label for="political">Political Affiliation</label>
@@ -161,21 +221,40 @@
       <%end%>
     </select>
 
+  <hr>
+  </hr>
+
+  <div class="form-check">
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios1" value="men" <%= "checked" if current_user.user_datum.interested_in_men == TRUE %>>
+  <label class="form-check-label" for="exampleRadios1">
+    Interested in Men
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios2" value="women" <%= "checked" if current_user.user_datum.interested_in_women == TRUE %>>
+  <label class="form-check-label" for="exampleRadios2">
+    Interested in Women
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="query_preferences" id="exampleRadios3" value="men and women" <%= "checked" if current_user.user_datum.interested_in_men_and_women == TRUE %>>
+  <label class="form-check-label" for="exampleRadios3">
+    Interested in Men and Women
+  </label>
+</div>
+
+ <hr>
+  </hr>
+
 
   <button>
   Update Info
   </button>
 </form>
-
-<h1>                  </h1>
-
-<h1>            -      </h1>
-<h1>                 </h1>
-<h1>              -    </h1>
-<h1>           -       </h1>
-<h1>           -       </h1>
-<h1>           -       </h1>
-
+<br>
+ <br>
+ <hr>
+  </hr>
 
 
 

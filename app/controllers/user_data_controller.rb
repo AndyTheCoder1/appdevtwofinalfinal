@@ -6,6 +6,24 @@ class UserDataController < ApplicationController
     @user_data = UserDatum.all
   end
 
+
+
+   def revealer
+      if current_user.user_datum.daily_photo_reveals > 0
+        input = params.fetch("owner_id")
+        @user = UserDatum.find_by!({ :owner_id => input })
+
+        new_count = current_user.user_datum.daily_photo_reveals - 1
+        current = UserDatum.find_by!({ :owner_id => current_user.id })
+        current.daily_photo_reveals = new_count
+        current.save
+        render({ :template => "user/revealing.html.erb" })
+      else
+        redirect_to("/explore", { :notice => "You've used up all your photo reveals for today- come back tomorrow to view more profiles!" })
+      end
+    end
+
+
   # GET /user_data/1 or /user_data/1.json
   def show
   end

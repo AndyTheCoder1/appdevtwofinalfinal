@@ -1,0 +1,106 @@
+<div class="card-deck">
+<% if @user.owner.own_photos.first == nil%>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 2</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 3</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+  
+    </div>
+  </div>
+  
+  
+  
+  <% else %>
+    <div class="card">
+    <img src="<%=@user.owner.own_photos.first.image_one%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+   
+    </div>
+  </div>
+    <div class="card">
+    <img src="<%=@user.owner.own_photos.first.image_two%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 2</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+
+
+    </div>
+  </div>
+
+    <div class="card">
+    <img src="<%=@user.owner.own_photos.first.image_three%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 3</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+   
+
+    </div>
+  </div>
+  <%end%>
+
+ 
+ 
+ 
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Grad School: <%=@user.school%></li>
+    <li class="list-group-item">Undergrad: <%=@user.undergrad_school%></li>
+    <li class="list-group-item">Job Title: <%=@user.job_title%></li>
+    <li class="list-group-item">Height: <%=@user.height%></li>
+    <li class="list-group-item">drinking?: <%=@user.drinking%></li>
+    <li class="list-group-item">smoking?: <%=@user.smoking%></li>
+    <li class="list-group-item">politics: <%=@user.political_affiliation%></li>
+    <li class="list-group-item">Religion: <%=@user.religion%></li>
+
+  </ul>
+  <div class="card-body">
+    <%= link_to "send date request?", "/" %>
+    <div>
+    </div>
+    <%= link_to "Politely Pass?", "/" %>
+    <div>
+    </div>
+    <%= link_to "Back to Explore Page", explore_path %>
+  </div>
+</div>
+<br>
+<br>
+<br>
