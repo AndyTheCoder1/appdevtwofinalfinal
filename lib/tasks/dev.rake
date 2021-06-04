@@ -7,7 +7,7 @@ task sample_data: :environment do
   #DateRequest.delete_all
   Photo.delete_all
   User.delete_all
-  #UserDatum.delete_all
+  UserDatum.delete_all
 
   people = Array.new(10) do
     {
@@ -46,14 +46,44 @@ task sample_data: :environment do
       )
   end
 
-  # users.each do |user|
-  #       if rand < 0.5
-  #         user.user_datum.drinking = "yes"
-  #       else
-  #         user.user_datum.drinking = "No"
-  #       end
-         # private: [true, false].sample,
-  #       end
+  users.each do |user|
+        data = UserDatum.create(
+          owner_id: user.id,
+          age: [21, 22,23,24,25,26,27,28,29].sample,
+          drinking: ["yes", "No", "Sometimes"].sample,
+          gender: ["Male", "Female", "Non-binary"].sample,
+          height: ["5'1''", "5'3''", "5'5''" , "5'8''" , "5'9''" , "6'1''" , "6'2''" ].sample,
+          hometown: ["Chicago", "Detroit", "Durham"].sample,
+          interested_in_men: [true, false].sample,
+          interested_in_women: [true, false].sample,
+          interested_in_men_and_women: [true, false].sample,
+          job_title: ["CPA", "Student", "Lawyer", "unemployed", "personal trainer"].sample,
+          religion: ["Muslim", "Buddhist", "Christian", "Catholic", "Atheist"].sample,
+          school: ["Harvard", "Kellogg", "Booth"].sample,
+          smoking: ["Yes", "No", "Somtimes"].sample,
+          undergrad_school: ["Yale", "Harvard", "Rice", "TCU", "SMU"].sample,
+          full_name:["Bob", "Jane", "Jeffrey", "Chris", "Kristen", "Jacob", "Josh", "Alex", "George", "Elon", "Jessica", "Aaron", "Sean", "Taylor"].sample
+        )
+
+        end
+
+
+
+  # user = User.create(
+  #     email: "#{username}@example.com",
+  #     password: "password",
+  #     username: username.downcase,
+  #     name: "#{person[:first_name]} #{person[:last_name]}",
+  #     bio: Faker::Lorem.paragraph(
+  #       sentence_count: 2,
+  #       supplemental: true,
+  #       random_sentences_to_add: 4
+  #     ),
+  #     website: Faker::Internet.url,
+  #     private: [true, false].sample,
+  #     avatar_image: "https://robohash.org/#{username}"
+  #   )
+
 
   ending = Time.now
   p "It took #{(ending - starting).to_i} seconds to create sample data."
