@@ -16,7 +16,7 @@ class UserController < ApplicationController
   end
 
   def explore
-
+    @list_of_users = UserDatum.all
   end
 
 
