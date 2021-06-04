@@ -3,7 +3,6 @@ class PhotosController < ApplicationController
 
   
   def add
-  
   end
   
   

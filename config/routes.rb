@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get "/explore" => "user#explore", as: "explore"
 
+  get "/reveal/:owner_id" => "user#reveal", as: "reveal"
+
   
 
   resources :user_data

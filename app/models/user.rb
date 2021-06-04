@@ -25,11 +25,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-   after_create do
-    data = UserDatum.create
-    data.owner_id = self.id
-    data.save
-    end
+  #  after_create do
+  #   data = UserDatum.create
+  #   data.owner_id = self.id
+  #   data.save
+  #   end
   
   has_many  :prompts, class_name: "PromptsAnswer", foreign_key: "owner_id", dependent: :destroy
 

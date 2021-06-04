@@ -62,6 +62,7 @@ task sample_data: :environment do
           school: ["Harvard", "Kellogg", "Booth"].sample,
           smoking: ["Yes", "No", "Somtimes"].sample,
           undergrad_school: ["Yale", "Harvard", "Rice", "TCU", "SMU"].sample,
+          political_affiliation: ["Conservative", "Liberal", "Moderate"].sample,
           full_name:["Bob", "Jane", "Jeffrey", "Chris", "Kristen", "Jacob", "Josh", "Alex", "George", "Elon", "Jessica", "Aaron", "Sean", "Taylor"].sample
         )
 
