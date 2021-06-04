@@ -62,30 +62,13 @@ task sample_data: :environment do
           school: ["Harvard", "Kellogg", "Booth"].sample,
           smoking: ["Yes", "No", "Somtimes"].sample,
           undergrad_school: ["Yale", "Harvard", "Rice", "TCU", "SMU"].sample,
+          political_affiliation: ["Conservative", "Liberal", "Moderate"].sample,
           full_name:["Bob", "Jane", "Jeffrey", "Chris", "Kristen", "Jacob", "Josh", "Alex", "George", "Elon", "Jessica", "Aaron", "Sean", "Taylor"].sample
         )
 
         end
 
-        #issue with the before action I created so that the user_datum wouldn't break upon new user cration ugh
-
-
-
-  # user = User.create(
-  #     email: "#{username}@example.com",
-  #     password: "password",
-  #     username: username.downcase,
-  #     name: "#{person[:first_name]} #{person[:last_name]}",
-  #     bio: Faker::Lorem.paragraph(
-  #       sentence_count: 2,
-  #       supplemental: true,
-  #       random_sentences_to_add: 4
-  #     ),
-  #     website: Faker::Internet.url,
-  #     private: [true, false].sample,
-  #     avatar_image: "https://robohash.org/#{username}"
-  #   )
-
+        #issue with the before action I created so that the user_datum wouldn't break upon new user
 
   ending = Time.now
   p "It took #{(ending - starting).to_i} seconds to create sample data."

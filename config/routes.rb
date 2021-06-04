@@ -3,11 +3,15 @@ Rails.application.routes.draw do
 
   root "home#show"
 
+  get "/reveal/:owner_id" => "user_data#revealer", as: "reveal"
+
   get "/add_photo" => "photo#add", as: "addphoto"
 
   get "/updateprofile" => "user#update", as: "editprofile"
 
   get "/explore" => "user#explore", as: "explore"
+
+  
 
   
 

@@ -6,8 +6,17 @@
 <h1> Update your profile to begin seeing profiles on the explore page! </h1>
 </center>
 <%else%>
+<br>
+
+<center>
 
 
+
+<div class="card" role="alert">
+  Photo Reveals left for today: <%= current_user.user_datum.daily_photo_reveals %>
+</div>
+
+</center>
 
 <center>
 
@@ -34,7 +43,7 @@
 
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">reveal photos?</a>
+    <%= link_to "Reveal Photos", reveal_path(owner_id: user.owner_id) %>
     <a href="#" class="card-link">Politely Pass</a>
   </div>
 </div>
