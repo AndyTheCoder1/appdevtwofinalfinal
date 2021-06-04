@@ -67,6 +67,8 @@ task sample_data: :environment do
 
         end
 
+        #issue with the before action I created so that the user_datum wouldn't break upon new user cration ugh
+
 
 
   # user = User.create(
