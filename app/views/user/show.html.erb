@@ -3,7 +3,7 @@
 <center>
  <br>
  <br>
-<h1 >Your Profile, <%=current_user.user_datum.full_name%></h1>
+<h1 >Your Profile</h1>
 </center>
 
 
@@ -11,8 +11,59 @@
  <br>
 
 
+
 <div class="card-deck">
+<% if current_user.own_photos.first == nil%>
+
   <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 2</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+
+  <div class="card">
+  
+    <img src="https://pixnio.com/free-images/2021/02/17/2021-02-17-10-36-18-1800x1200.jpg " class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 3</h5>
+      <p class="card-text"></p>
+    </div>
+    
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+    </form>
+    </div>
+  </div>
+  
+  
+  
+  <% else %>
+    <div class="card">
     <img src="<%=current_user.own_photos.first.image_one%>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Photo 1</h5>
@@ -25,32 +76,34 @@
     </form>
     </div>
   </div>
-  <div class="card">
-    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
+    <div class="card">
+    <img src="<%=current_user.own_photos.first.image_two%>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Photo 2</h5>
       <p class="card-text"></p>
     </div>
     <div class="card-footer">
     <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
-              <input type="file" id="photo_two" name="photo_two" class="form-control">
-    </form>
-    </div>
-  </div>
-  <div class="card">
-    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Photo 3</h5>
-      <p class="card-text"></p>
-    </div>
-    <div class="card-footer">
-    <form action="/add_photo" method="get" class="form-horizontal" enctype="multipart/form-data">
-              <input type="file" id="photo_three" name="photo_three" class="form-control">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
 
     </form>
     </div>
   </div>
-</div>
+
+    <div class="card">
+    <img src="<%=current_user.own_photos.first.image_three%>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Photo 1</h5>
+      <p class="card-text"></p>
+    </div>
+    <div class="card-footer">
+    <form action="/add_photo" method="post" class="form-horizontal" enctype="multipart/form-data">
+              <input type="file" id="photo_one" name="photo_one" class="form-control">
+
+    </form>
+    </div>
+  </div>
+  <%end%>
 
  <hr>
   </hr>

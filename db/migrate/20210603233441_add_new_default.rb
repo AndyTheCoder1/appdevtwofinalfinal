@@ -1,7 +1,7 @@
-class AddDefaults < ActiveRecord::Migration[6.1]
-  def change
+class AddNewDefault < ActiveRecord::Migration[6.1]
+   def change
     change_column_default( :user_data, :full_name , " " )
-    change_column_default( :user_data, :religion , "" )
+    change_column_default( :user_data, :religion , " " )
     change_column_default( :user_data, :political_affiliation , " " )
     change_column_default( :user_data, :height, " " )
     change_column_default( :user_data, :hometown, " " )

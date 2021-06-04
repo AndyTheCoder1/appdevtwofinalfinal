@@ -3,25 +3,25 @@
 # Table name: user_data
 #
 #  id                          :bigint           not null, primary key
-#  owner_id                    :integer
-#  full_name                   :string
-#  religion                    :string
-#  political_affiliation       :string
-#  height                      :string
-#  hometown                    :string
 #  age                         :integer
-#  job_title                   :string
-#  school                      :string
-#  gender                      :string
-#  drinking                    :string
-#  smoking                     :string
-#  undergrad_school            :string
 #  daily_photo_reveals         :integer
-#  interested_in_men           :boolean
-#  interested_in_women         :boolean
-#  interested_in_men_and_women :boolean
+#  drinking                    :string           default(" ")
+#  full_name                   :string           default(" ")
+#  gender                      :string           default(" ")
+#  height                      :string           default(" ")
+#  hometown                    :string           default(" ")
+#  interested_in_men           :boolean          default(TRUE)
+#  interested_in_men_and_women :boolean          default(FALSE)
+#  interested_in_women         :boolean          default(FALSE)
+#  job_title                   :string           default(" ")
+#  political_affiliation       :string           default(" ")
+#  religion                    :string           default(" ")
+#  school                      :string           default(" ")
+#  smoking                     :string           default(" ")
+#  undergrad_school            :string           default(" ")
 #  created_at                  :datetime         not null
 #  updated_at                  :datetime         not null
+#  owner_id                    :integer
 #
 
 one:

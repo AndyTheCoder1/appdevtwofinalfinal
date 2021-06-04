@@ -1,5 +1,17 @@
 class UserController < ApplicationController
   def show
+
+    looking = current_user.id
+    check = UserDatum.where({ :owner => looking })
+    if check.first == nil
+      user = UserDatum.new
+      user.owner_id = current_user.id
+      user.save
+    else
+
+    end
+
+
     
   end
 
