@@ -11,16 +11,7 @@ class UserController < ApplicationController
 
     end
 
-    def reveal
-      
-      if current_user.user_datum.reveal_count > 0
-        input = params.fetch("owner_id")
-        @user = UserDatum.where({ :owner_id => input })
-        current_user.user_datum.reveal_count = current_user.user_datum.reveal_count - 1
-      else
-        redirect_to("/explore", { :notice => "You've used up all your photo reveals for today- come back tomorrow to view more profiles!" })
-      end
-    end
+   
 
     
   end
