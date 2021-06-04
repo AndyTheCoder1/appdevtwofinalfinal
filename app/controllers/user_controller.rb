@@ -17,7 +17,7 @@ class UserController < ApplicationController
 
   def explore
     if current_user.user_datum.interested_in_men == true
-      @list_of_users = UserDatum.where({ :gender => "male" })
+      @list_of_users = UserDatum.where({ :gender => "Male" })
       
     end
   end
@@ -36,7 +36,7 @@ class UserController < ApplicationController
     input_drinking = params.fetch("query_drinking")
     input_smoking =  params.fetch("query_smoking")
     input_school =  params.fetch("query_undergrad")
-    input_interest =  params.fetch("query_preferences")
+    #input_interest =  params.fetch("query_preferences")
 
     matching_data = UserDatum.where({ :id => current_user.id})
 
