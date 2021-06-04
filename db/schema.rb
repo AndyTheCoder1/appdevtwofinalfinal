@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_080318) do
+ActiveRecord::Schema.define(version: 2021_06_04_154125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,22 +53,22 @@ ActiveRecord::Schema.define(version: 2021_05_31_080318) do
 
   create_table "user_data", force: :cascade do |t|
     t.integer "owner_id"
-    t.string "full_name"
-    t.string "religion"
-    t.string "political_affiliation"
-    t.string "height"
-    t.string "hometown"
+    t.string "full_name", default: " "
+    t.string "religion", default: " "
+    t.string "political_affiliation", default: " "
+    t.string "height", default: " "
+    t.string "hometown", default: " "
     t.integer "age"
-    t.string "job_title"
-    t.string "school"
-    t.string "gender"
-    t.string "drinking"
-    t.string "smoking"
-    t.string "undergrad_school"
-    t.integer "daily_photo_reveals"
-    t.boolean "interested_in_men"
-    t.boolean "interested_in_women"
-    t.boolean "interested_in_men_and_women"
+    t.string "job_title", default: " "
+    t.string "school", default: " "
+    t.string "gender", default: " "
+    t.string "drinking", default: " "
+    t.string "smoking", default: " "
+    t.string "undergrad_school", default: " "
+    t.integer "daily_photo_reveals", default: 3
+    t.boolean "interested_in_men", default: true
+    t.boolean "interested_in_women", default: false
+    t.boolean "interested_in_men_and_women", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,6 +1,22 @@
 class UserController < ApplicationController
   def show
-    @test = 7
+
+    looking = current_user.id
+    check = UserDatum.where({ :owner => looking })
+    if check.first == nil
+      user = UserDatum.new
+      user.owner_id = current_user.id
+      user.save
+    else
+
+    end
+
+
+    
+  end
+
+  def explore
+    @list_of_users = UserDatum.all
   end
 
 
@@ -19,7 +35,7 @@ class UserController < ApplicationController
     input_school =  params.fetch("query_undergrad")
     input_interest =  params.fetch("query_preferences")
 
-    matching_data = UserDatum.where({ :id => current_user.id})
+    matching_data = UserDatum.where({ :owner_id => current_user.id})
 
     the_data = matching_data.first
 
@@ -35,6 +51,22 @@ class UserController < ApplicationController
     the_data.drinking = input_drinking
     the_data.smoking = input_smoking
     the_data.undergrad_school = input_school
+
+    if input_interest == "men"
+      the_data.interested_in_men = TRUE
+      the_data.interested_in_women = FALSE
+      the_data.interested_in_men_and_women = FALSE
+
+    elsif input_interest == "women"
+      the_data.interested_in_men = FALSE
+      the_data.interested_in_women = TRUE
+      the_data.interested_in_men_and_women = FALSE
+    
+    else 
+      the_data.interested_in_men = TRUE
+      the_data.interested_in_women = TRUE
+      the_data.interested_in_men_and_women = TRUE
+    end
 
     the_data.save
 

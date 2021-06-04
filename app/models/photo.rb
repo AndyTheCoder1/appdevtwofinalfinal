@@ -22,5 +22,5 @@ class Photo < ApplicationRecord
 
   belongs_to :owner, required: false, class_name: "User", foreign_key: "owner_id", counter_cache: :own_photos_count
 
-  mount_uploader :avatar, PhotooneUploader
+  #mount_uploader :avatar, PhotooneUploader
 end
