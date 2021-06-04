@@ -3,11 +3,11 @@ Rails.application.routes.draw do
 
   root "home#show"
 
-  get "/add_photo" => "photo#add", as: :addphoto
+  get "/add_photo" => "photo#add", as: "addphoto"
 
-  get "/updateprofile" => "user#update", as: :editprofile
+  get "/updateprofile" => "user#update", as: "editprofile"
 
-  get "/explore" => "user#explore", as: :explore
+  get "/explore" => "user#explore", as: "explore"
 
   
 
